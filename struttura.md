@@ -27,3 +27,9 @@
 - corso
 - appelli_fatti
 - voto_appello
+
+## Appelli
+- id
+- appello_1
+- appello_2
+- appello_3
