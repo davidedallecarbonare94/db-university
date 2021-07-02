@@ -1,5 +1,9 @@
 # 1.Selezionare tutti gli studenti nati nel 1990(160)
 
+SELECT *
+FROM `students`
+WHERE YEAR(date_of_birth) = 1990
+
 - |55|4|Lauro|Vitale|1990-01-30|BWOQAH56L35A201P|2018-10-22|620087|baldassarre.mancini@dangelo.com
 |86|12|Matilde|Ruggiero|1990-11-17|UIFHBM73Q42E973M|2021-02-14|620118|mariagiulia18@gmail.com
 |217|16|Marieva|Mariani|1990-08-30|CRKYAI63Z72H930S|2020-12-13|620249|wgrassi@mariani.net
@@ -163,6 +167,10 @@
 
 # 2.Selezionare tutti i corsi che valgono più di 10 crediti
 
+SELECT *
+FROM `courses`
+WHERE `cfu` >10
+
 |1|1|provident aut non|Et dolorem optio nostrum quam. Nesciunt eos non molestiae deleniti. Earum amet nam minus porro aut corrupti.|I semestre|1|11|www.minima.uni.it
 |9|1|quod in aut|Hic a suscipit illum excepturi deleniti. Est sunt animi ut doloremque incidunt. Atque ipsa ipsa incidunt sit dolor dolorum.|II semestre|2|13|www.sunt.uni.it
 |11|1|beatae eveniet fugiat|Reprehenderit aut voluptatem aliquam et consequatur. Perferendis est aut earum ut quis a. Repellendus dolor qui est. Aut a quae mollitia.|II semestre|2|13|NULL
@@ -191,6 +199,10 @@
 
 # 3.Selezionare tutti gli studenti che hanno più di 30anni
 
+SELECT * 
+FROM `students` 
+WHERE YEAR(`date_of_birth`) <= 1990-07-02
+
 |1|61|Antonio|D'angelo|1972-08-31|QPXVYW51Z02T871B|2019-02-21|620033|lbellini@sorrentino.it
 |3|67|Rocco|Serra|1973-04-09|XBDISV06Y00G224B|2020-05-28|620035|mfarina@libero.it
 |10|43|Lidia|Palumbo|1973-08-17|QALBXJ79U03H174T|2019-11-05|620042|jmazza@martini.it
@@ -217,3 +229,112 @@
 |59|74|Diamante|Gentile|1974-06-28|VVHIFB18W67S836H|2019-08-22|620091|jarno.costantini@rizzo.net
 |60|42|Furio|Lombardo|1979-10-19|ZFYESS50Q28L944J|2020-01-08|620092|rudy.benedetti@gmail.com
 
+# 4.Selezionare tutti i corsi del primo semestre del primoanno di un qualsiasi corso di laurea
+
+SELECT * 
+FROM `courses` 
+WHERE `year` = 1 
+AND `period` = 'I semestre'
+
+|1|1|provident aut non|Et dolorem optio nostrum quam. Nesciunt eos non molestiae deleniti. Earum amet nam minus porro aut corrupti.|I semestre|1|11|www.minima.uni.it
+|2|1|et doloremque omnis|Itaque quos aut repellat et amet et. Ipsum itaque laboriosam est earum unde id ea facilis. Eos placeat adipisci ipsam et. Ut ipsa ducimus sit sed ut provident facilis.|I semestre|1|4|NULL
+|3|1|nam nostrum et|Eligendi expedita repellendus debitis iusto. Omnis est et non laboriosam tempora. Architecto laborum quas nisi quia hic sed ea autem.|I semestre|1|3|www.nisi.uni.it
+|20|2|ut animi adipisci|Dolorem eligendi sit eius quas. Voluptas corrupti et deserunt ex et. Nostrum nemo numquam ut ratione non tempore voluptatum.|I semestre|1|4|www.et.uni.it
+|21|2|ut rem libero|Eligendi qui magni aliquam molestiae ut assumenda nihil. Dolor eligendi aperiam non deleniti aliquid laborum. Tempore modi molestiae non pariatur corrupti. Eum rem autem amet expedita aut.|I semestre|1|12|www.earum.uni.it
+|22|2|soluta voluptatem at|Libero voluptas expedita quia. Quas nulla culpa similique eum. Aperiam officiis quia a sed accusamus qui qui. Nemo esse qui labore optio perspiciatis non.|I semestre|1|11|www.rerum.uni.it
+|23|2|impedit et eaque|Ut autem omnis repellendus officiis. Quia optio est voluptatum aspernatur.|I semestre|1|10|www.illum.uni.it
+|46|3|perspiciatis quae eveniet|Eaque pariatur magnam veritatis sit quis animi ut. Sed in voluptates fugit ut qui qui. Neque mollitia eius vitae dolor qui. Magnam hic ipsa magni debitis eum optio consequuntur.|I semestre|1|3|www.ipsum.uni.it
+|47|3|enim qui ea|Perspiciatis qui voluptatum quo. Id impedit porro aliquid commodi sint ea corrupti. Et asperiores eum praesentium amet dolorem quo. Accusantium non esse eveniet ab minima.|I semestre|1|10|www.odio.uni.it
+|48|3|earum aperiam nihil|Itaque cupiditate omnis tempore sunt voluptatem. Et laudantium consectetur cum omnis quibusdam quidem.|I semestre|1|4|www.ratione.uni.it
+|49|3|odio odit id|Omnis excepturi ipsa modi earum aut necessitatibus. Blanditiis fugiat porro eum. Exercitationem eaque mollitia error magni ut omnis quidem. Quis et voluptas voluptas nobis temporibus placeat est ut.|I semestre|1|15|NULL
+|66|4|officia esse maxime|Debitis eos veritatis aut velit et ad itaque. Sed eum et similique laborum. Quia itaque facilis quisquam ut at est magni. Officia itaque sit alias nobis maxime excepturi rerum.|I semestre|1|11|www.in.uni.it
+|67|4|corporis incidunt ex|Esse at asperiores provident consectetur quos. Ea voluptatem porro dignissimos. A iure quis libero explicabo alias architecto.|I semestre|1|9|NULL
+|68|4|quam repellat enim|Sed qui quis corporis quibusdam odit. Placeat aut molestias perferendis quam odio aut. Cumque nostrum explicabo dolore voluptatem ut quia officia.|I semestre|1|4|www.eos.uni.it
+|85|5|et harum nulla|Sed dignissimos vel id delectus eveniet qui fugiat. Deserunt repudiandae iure iure odio. Quis error aspernatur dolorem quo.|I semestre|1|5|NULL
+|86|5|debitis vel pariatur|Esse non et rem quis laborum qui vel autem. Aliquid accusantium ratione voluptas. Doloremque quo optio sint est. Non similique sunt et fuga non numquam assumenda. Qui eius autem quis.|I semestre|1|5|NULL
+|87|5|id id qui|Laboriosam impedit odit voluptatum nisi esse aut. Ipsum repellat impedit eius exercitationem omnis. In sapiente commodi rem sit sed. Officia unde consequuntur qui nam.|I semestre|1|15|NULL
+|88|5|molestias minima voluptates|In id commodi tempora quia. Et distinctio qui fugiat labore ut et saepe dolorem. Aut enim vitae deleniti et quo.|I semestre|1|15|www.nam.uni.it
+|89|5|ipsam atque animi|In deserunt voluptatem a voluptate omnis rerum maiores. Eum voluptas voluptas repellat labore quaerat. Omnis id sed et vel deleniti.|I semestre|1|5|NULL
+|99|6|corporis consequatur labore|Sed modi ad qui consequatur nihil numquam. Laborum eos aut perferendis consectetur veritatis voluptatum. Harum est nesciunt natus placeat quia deserunt. Earum eum ipsam placeat dolor unde est error.|I semestre|1|9|NULL
+|100|6|minima iste veniam|Architecto voluptatem sed et nobis eum. Minus aut assumenda accusantium autem officiis.|I semestre|1|5|NULL
+|101|6|quis quasi eos|Autem eaque voluptatibus magnam in et. Eos est autem ut repellat in omnis. Id fugit alias expedita qui vel qui.|I semestre|1|13|NULL
+|110|7|sint nulla ut|Impedit ad voluptas sit architecto. Recusandae doloribus molestiae et quia. Dolorem quia voluptatum odio. Nemo dolorum ratione aut voluptatem nihil ullam. Omnis eius modi ad vero sint repellendus et.|I semestre|1|3|www.vel.uni.it
+|111|7|ut sit est|Deleniti animi id aut quo ea magnam sit. Ipsa vel velit sint reiciendis. Consequuntur molestias sint autem officia.|I semestre|1|6|www.quos.uni.it
+|112|7|voluptas amet vitae|Eum odit aliquid quisquam. Voluptatem odio deserunt nihil itaque omnis. Quo rerum et ea fugit.|I semestre|1|14|www.quo.uni.it
+
+# 5.Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020
+
+SELECT * FROM exams 
+WHERE HOUR(hour) >= 14 
+AND `date` = "2020-06-20"
+
+|48|10|2020-06-20|14:15:00|Piano 2|Rotonda Loredana 103 Piano 3
+|368|74|2020-06-20|14:20:00|Appartamento 94|Strada Pellegrini 53
+|598|120|2020-06-20|15:20:00|Appartamento 24|Incrocio Cristyn 66 Piano 5
+|1078|216|2020-06-20|16:40:00|Appartamento 42|Strada Lorenzo 2 Appartamento 63
+|1463|293|2020-06-20|16:00:00|Piano 6|Via Monia 86
+|1578|316|2020-06-20|14:45:00|Piano 8|Borgo Jelena 1
+|1663|333|2020-06-20|14:40:00|Piano 2|Strada Kayla 16
+|1988|398|2020-06-20|15:20:00|Appartamento 28|Via Sarita 3 Appartamento 56
+|2298|460|2020-06-20|15:45:00|Appartamento 36|Contrada Alessio 44 Piano 4
+|2433|487|2020-06-20|16:00:00|Appartamento 78|Strada Gallo 7 Piano 7
+|2578|516|2020-06-20|16:45:00|Piano 2|Borgo Noah 404 Piano 2
+|2873|575|2020-06-20|14:45:00|Piano 2|Strada Mercedes 84
+|3423|685|2020-06-20|15:30:00|Appartamento 87|Via Rizzo 7
+|3948|790|2020-06-20|16:45:00|Piano 7|Contrada Russo 240
+|4558|912|2020-06-20|16:40:00|Piano 7|Strada D'amico 7 Appartamento 15
+|5013|1003|2020-06-20|14:45:00|Appartamento 10|Piazza Costa 7
+|5473|1095|2020-06-20|16:00:00|Piano 7|Via Vinicio 89
+|5593|1119|2020-06-20|16:20:00|Piano 4|Via Raniero 306 Piano 0
+|6103|1221|2020-06-20|14:40:00|Piano 1|Incrocio Sorrentino 1
+|6328|1266|2020-06-20|16:30:00|Piano 5|Via Ileana 1 Appartamento 27
+|6403|1281|2020-06-20|16:00:00|Piano 4|Rotonda Giobbe 4
+
+# 6.Selezionare tutti i corsi di laurea magistrale
+
+SELECT * 
+FROM `degrees` 
+WHERE `level` = 'magistrale'
+
+|5|1|Corso di Laurea Magistrale in Biologia evoluzionistica|magistrale|Contrada Fiore 253|biologia-evoluzionistica@uni.it|www.biologia-evoluzionistica.uni.it
+|6|1|Corso di Laurea Magistrale in Biologia marina|magistrale|Via Colombo 378 Piano 9|biologia-marina@uni.it|www.biologia-marina.uni.it
+|7|1|Corso di Laurea Magistrale in Biologia molecolare|magistrale|Strada Armando 86 Piano 9|biologia-molecolare@uni.it|www.biologia-molecolare.uni.it
+|8|1|Corso di Laurea Magistrale in Biologia sanitaria|magistrale|Contrada Osvaldo 497 Piano 5|biologia-sanitaria@uni.it|www.biologia-sanitaria.uni.it
+|9|1|Corso di Laurea Magistrale in Biotecnologie industriali|magistrale|Rotonda Tommaso 806 Appartamento 21|biotecnologie-industriali@uni.it|www.biotecnologie-industriali.uni.it
+|10|1|Corso di Laurea Magistrale in Scienze della natura|magistrale|Strada Negri 323|scienze-della-natura@uni.it|www.scienze-della-natura.uni.it
+|13|2|Corso di Laurea Magistrale in Astronomia|magistrale|Via Samira 39|astronomia@uni.it|www.astronomia.uni.it
+|14|2|Corso di Laurea Magistrale in Fisica|magistrale|Piazza Nathan 77 Piano 2|fisica@uni.it|www.fisica.uni.it
+|18|3|Corso di Laurea Magistrale in Ingegneria Civile|magistrale|Contrada Moretti 163|ingegneria-civile@uni.it|www.ingegneria-civile.uni.it
+|23|4|Corso di Laurea Magistrale in Bioingegneria|magistrale|Contrada Sibilla 626|bioingegneria@uni.it|www.bioingegneria.uni.it
+|24|4|Corso di Laurea Magistrale in Ingegneria dell'Automazione|magistrale|Strada Ippolito 684|ingegneria-dellautomazione@uni.it|www.ingegneria-dellautomazione.uni.it
+|25|4|Corso di Laurea Magistrale in Ingegneria Elettronica|magistrale|Piazza Neri 862|ingegneria-elettronica@uni.it|www.ingegneria-elettronica.uni.it
+|26|4|Corso di Laurea Magistrale in Ingegneria Informatica|magistrale|Via Milani 9|ingegneria-informatica@uni.it|www.ingegneria-informatica.uni.it
+|27|4|Corso di Laurea Magistrale in Cybersecurity|magistrale|Piazza Quasimodo 14|cybersecurity@uni.it|www.cybersecurity.uni.it
+|30|5|Corso di Laurea Magistrale in Matematica|magistrale|Piazza Demis 53 Appartamento 68|matematica@uni.it|www.matematica.uni.it
+|31|5|Corso di Laurea Magistrale in Informatica|magistrale|Incrocio Eustachio 253 Appartamento 90|informatica@uni.it|www.informatica.uni.it
+|36|6|Corso di Laurea Magistrale in Scienze delle Professioni Sanitarie|magistrale|Via D'angelo 9 Piano 8|scienze-delle-professioni-sanitarie@uni.it|www.scienze-delle-professioni-sanitarie.uni.it
+|37|6|Corso di Laurea Magistrale in Scienze e Tecniche dell'Attività Motoria Preventiva e Adattata|magistrale|Contrada Sala 9|scienze-e-tecniche-dellattivita-motoria-preventiva-e-adattata@uni.it|www.scienze-e-tecniche-dellattivita-motoria-preventiva-e-adattata.uni.it
+|44|7|Corso di Laurea Magistrale in Odontoiatria e Protesi Dentaria|magistrale|Via Mariani 185|odontoiatria-e-protesi-dentaria@uni.it|www.odontoiatria-e-protesi-dentaria.uni.it
+|49|8|Corso di Laurea Magistrale in Chimica|magistrale|Strada Soriana 951|chimica@uni.it|www.chimica.uni.it
+|50|8|Corso di Laurea Magistrale in Chimica Industriale|magistrale|Incrocio Gatti 16|chimica-industriale@uni.it|www.chimica-industriale.uni.it
+|51|8|Corso di Laurea Magistrale in Scienza dei Materiali|magistrale|Contrada Piccarda 7|scienza-dei-materiali@uni.it|www.scienza-dei-materiali.uni.it
+|52|8|Corso di Laurea Magistrale in Scienze e Tecnologie per l'Ambiente|magistrale|Rotonda Ferrari 38|scienze-e-tecnologie-per-lambiente@uni.it|www.scienze-e-tecnologie-per-lambiente.uni.it
+|54|9|Corso di Laurea Magistrale in Business Administration|magistrale|Rotonda Valentini 49|business-administration@uni.it|www.business-administration.uni.it
+|55|9|Corso di Laurea Magistrale in Economics and Finance|magistrale|Strada Sanna 652|economics-and-finance@uni.it|www.economics-and-finance.uni.it
+
+# 7.Da quanti dipartimenti è composta l'università?
+
+SELECT COUNT(*) 
+AS numero_dipartimenti 
+FROM departments
+
+|12
+
+# 8.Quanti sono gli insegnanti che non hanno un numerodi telefono?
+
+SELECT COUNT(*) 
+AS professori_antiquati 
+FROM teachers 
+WHERE phone IS NULL
+
+|50
